@@ -4,6 +4,8 @@ straydog
 StrayDog :: E2K :: English to Korean translation tool
 
 영문기사나 매뉴얼 책을 한글로 번역할 때 사용하기 위해 만든 HTML/Javascript 기반의 도구입니다.
+프로젝트명 StrayDog 는 요즘 하도 동물 이름들이 유행하길래 흉내내 봤습니다.
+'길잃은 개' ,'들개' 이런 뜻인데 특별한 의미는 없고 예전에 아는 형님이 사용하시던 닉네임 입니다.
 
 주요기능
 --------
