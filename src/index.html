@@ -87,12 +87,14 @@
 -->			    
 			<h4>Your own translation:
         <button id="copy-cb" type="button" class="btn btn-primary btn-mini">Copy to Clipboard!</button>
+        <span class="pull-right">powerd by <a href="http://epiceditor.com/" target="_blank">EpicEditor</a></span>
       </h4>
+          <div id="epiceditor" class="well">
 				<textarea class="field span6" 
 				          id="your-translation" 
 				          rows="9" 
 				          placeholder="Result.."></textarea>	
-			
+          </div>			
 			</div>
 			
 			<div class="span6">
@@ -114,6 +116,9 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="resource/jquery-ui-1.10.1.custom/js/jquery-1.9.1.min.js"></script>
     <script src="resource/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Load EpicEditor -->
+    <script src="resource/EpicEditor/epiceditor/js/epiceditor.min.js"></script>
 
     <script type=text/javascript>
 
@@ -165,6 +170,37 @@
     }
 
 
+
+    var opts = {
+      container: 'epiceditor',
+      textarea: 'your-translation',
+      basePath: 'epiceditor',
+      clientSideStorage: true,
+      localStorageName: 'epiceditor',
+      useNativeFullsreen: true,
+      parser: marked,
+
+      file: {
+        name: 'epiceditor',
+        defaultContent: 'Input',
+        autoSave: 100
+      },  
+      theme: {
+        base:'resource/EpicEditor/epiceditor/themes/base/epiceditor.css',
+        preview:'resource/EpicEditor/epiceditor/themes/preview/preview-dark.css',
+        editor:'resource/EpicEditor/epiceditor/themes/editor/epic-dark.css'
+      },
+
+      focusOnLoad: true,
+
+      shortcut: {
+        modifier: 18,
+        fullscreen: 70,
+        preview: 80
+      }
+    }
+
+    var editor = new EpicEditor(opts).load();
 
     $(document).ready(function() {
        
